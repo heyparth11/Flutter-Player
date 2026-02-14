@@ -1,0 +1,36 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "music-player-c92f6",
+          "appId": "1:576876728848:android:bac95687a0b1cff8cc7095",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "music-player-c92f6",
+          "appId": "1:576876728848:ios:ac16616d692403b8cc7095",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "music-player-c92f6",
+          "configurations": {
+            "android": "1:576876728848:android:bac95687a0b1cff8cc7095",
+            "ios": "1:576876728848:ios:ac16616d692403b8cc7095"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "asia-south1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

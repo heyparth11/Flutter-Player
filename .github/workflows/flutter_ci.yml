@@ -1,0 +1,39 @@
+name: Flutter Release CI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # This block is essential for modern GitHub Actions security
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.0'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze code
+        run: flutter analyze
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2 # Updated to v2
+        with:
+          files: build/app/outputs/flutter-apk/app-release.apk
+          # This is the modern way to pass the token as an input
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generate_release_notes: true # Optional: Auto-creates changelog
