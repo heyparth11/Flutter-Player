@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jiosaavn/jiosaavn.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/model/song.dart';
@@ -59,34 +58,6 @@ class SongInfoSection extends StatelessWidget {
               },
             );
 
-            return GestureDetector(
-              onTap: () {
-                favProvider.toggleFavorite(
-                  songId: song.id,
-                  title: song.title,
-                  artist: song.artist,
-                  artwork: song.artwork150,
-                  playbackUrl: song.url,
-                );
-              },
-              // child: AnimatedIcon(
-              //     icon: AnimatedIcon,
-              //     progress: progress,
-              // ),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(189, 174, 174, 0.5),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                width: 30,
-                height: 30,
-                child: Icon(
-                  isFav ? Icons.favorite : Icons.favorite_border,
-                  color: isFav ? Colors.red : Colors.white,
-                  size: 25,
-                ),
-              ),
-            );
           },
         ),
         const SizedBox(width: 18),

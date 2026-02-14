@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/screens/now_playing/now_playing.dart';
 import 'package:music_player/screens/now_playing/now_playing_model.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../model/song.dart';
 import '../repos/favourites_repo.dart';
 
 class FavoritesProvider extends ChangeNotifier {

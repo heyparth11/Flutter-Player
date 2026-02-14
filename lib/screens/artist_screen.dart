@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import '../data/model/album.dart';
 import '../data/model/song.dart';
 import 'album_screen.dart';
-import 'now_playing/now_playing.dart';
 import 'now_playing/now_playing_model.dart';
 
 class ArtistScreen extends StatefulWidget {

@@ -4,7 +4,6 @@ import 'package:audio_service/audio_service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:just_audio/just_audio.dart';
 
-import '../model/song.dart';
 import '../save_helpers.dart';
 
 enum RepeatMode {
@@ -65,7 +64,6 @@ class MusicAudioHandler extends BaseAudioHandler
 
       final currentItem = mediaItem.value;
       if (currentItem == null) return;
-      print('updated duration');
 
       // Update mediaItem with duration
       mediaItem.add(

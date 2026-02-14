@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../data/api/music_api.dart';
-import '../../../data/model/song.dart';
 
 class SearchViewModel extends ChangeNotifier {
   final MusicApiService _apiService = MusicApiService();
@@ -31,7 +30,7 @@ class SearchViewModel extends ChangeNotifier {
     try {
       searchResult = await _apiService.searchAll(query);
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
       searchResult = [];
     }
 

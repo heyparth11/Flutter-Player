@@ -1,13 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:jiosaavn/jiosaavn.dart';
 import 'package:music_player/data/model/album.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../model/song.dart';
 
 class MusicApiService {
-  static const _baseUrl = "https://saavn.sumit.co/api";
+  // static const _baseUrl = "https://saavn.sumit.co/api";
 
   final jiosaavn = JioSaavnClient();
 

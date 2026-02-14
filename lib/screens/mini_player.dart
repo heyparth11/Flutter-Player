@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:music_player/screens/now_playing/now_playing.dart';
 import 'package:provider/provider.dart';
 
-import '../data/model/song.dart';
 import 'now_playing/now_playing_model.dart';
 import 'utils/marquee_text.dart';
 
@@ -85,40 +84,40 @@ class _Artwork extends StatelessWidget {
   }
 }
 
-class _SongInfo extends StatelessWidget {
-  final Song song;
-  const _SongInfo(this.song);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          song.title,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(height: 2),
-        Text(
-          song.artist,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-            color: Colors.white70,
-            fontSize: 12,
-          ),
-        ),
-      ],
-    );
-  }
-}
+// class _SongInfo extends StatelessWidget {
+//   final Song song;
+//   const _SongInfo(this.song);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Text(
+//           song.title,
+//           maxLines: 1,
+//           overflow: TextOverflow.ellipsis,
+//           style: const TextStyle(
+//             color: Colors.white,
+//             fontSize: 14,
+//             fontWeight: FontWeight.w600,
+//           ),
+//         ),
+//         const SizedBox(height: 2),
+//         Text(
+//           song.artist,
+//           maxLines: 1,
+//           overflow: TextOverflow.ellipsis,
+//           style: const TextStyle(
+//             color: Colors.white70,
+//             fontSize: 12,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 class _PlayPauseButton extends StatelessWidget {
   @override

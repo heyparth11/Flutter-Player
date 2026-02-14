@@ -1,8 +1,5 @@
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:music_player/data/service/offline_service.dart';
 import 'package:music_player/data/service/recent_plays.dart';
 
 import '../model/song.dart';

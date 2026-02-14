@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/data/providers/home_state_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/model/song.dart';

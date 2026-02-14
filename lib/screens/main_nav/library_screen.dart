@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:music_player/data/providers/download_provider.dart';
 import 'package:music_player/screens/main_nav/library_song_row.dart';
 import 'package:provider/provider.dart';

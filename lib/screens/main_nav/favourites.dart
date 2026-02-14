@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/data/providers/recent_plays.dart';
 import 'package:provider/provider.dart';
 
 import '../../data/model/song.dart';
 import '../../data/providers/favs_provider.dart';
-import '../now_playing/now_playing.dart';
 import '../now_playing/now_playing_model.dart';
 import 'library_song_row.dart';
 

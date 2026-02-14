@@ -29,9 +29,7 @@ class LibrarySongRow extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: song == null
-                      ? Image.asset("assets/cover.png", width: 60, height: 60)
-                      : Image.network(song!.artwork150, width: 60, height: 60),
+                  child: Image.network(song.artwork150, width: 60, height: 60),
                 ),
                 const SizedBox(width: 14),
                 Expanded(
@@ -42,15 +40,13 @@ class LibrarySongRow extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              song == null ? "Blinding Lights" : song!.title,
+                              song.title,
                               style: TextStyle(color: Colors.white, fontSize: 16),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              song == null
-                                  ? "The Weeknd"
-                                  : 'Song · ${song!.artist}',
+                              'Song · ${song.artist}',
                               style: TextStyle(
                                 color: Color.fromRGBO(123, 123, 135, 1.0),
                                 fontSize: 14,
@@ -71,7 +67,7 @@ class LibrarySongRow extends StatelessWidget {
                             context: context,
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
-                            builder: (_) => OptionsBottomSheet(song: song!),
+                            builder: (_) => OptionsBottomSheet(song: song),
                           );
                         },
                         icon: Icon(Icons.more_vert, color: Colors.white,),
