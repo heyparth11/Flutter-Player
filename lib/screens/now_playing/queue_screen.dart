@@ -81,7 +81,7 @@ class QueueScreen extends StatelessWidget {
 
                       ToggleIconButton(
                         icon: Icons.repeat,
-                        isActive: model.repeatMode != RepeatMode.off,
+                        isActive: model.repeatMode != MyRepeatMode.off,
                         onTap: model.toggleRepeat,
                       ),
                     ],

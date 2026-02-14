@@ -168,6 +168,7 @@ import 'dart:async';
 
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
+
 import 'package:palette_generator/palette_generator.dart';
 
 import '../../data/api/music_api.dart';
@@ -192,11 +193,11 @@ class NowPlayingModel extends ChangeNotifier {
 
   AudioProcessingState _processingState = AudioProcessingState.idle;
 
-
   // ---------- GETTERS ----------
 
   bool get isShuffle => audioHandler.shuffleEnabled;
-  RepeatMode get repeatMode => audioHandler.repeatMode;
+
+  MyRepeatMode get repeatMode => audioHandler.repeatMode;
 
   AudioProcessingState get processingState => _processingState;
 
@@ -207,11 +208,12 @@ class NowPlayingModel extends ChangeNotifier {
   bool get isSeeking => _isSeeking;
 
   double get currentPosition => _currentPosition;
+
   double get totalDuration => _totalDuration;
 
   double get currentSeconds => _currentPosition;
-  double get totalSeconds => _totalDuration;
 
+  double get totalSeconds => _totalDuration;
 
   double get progress =>
       _totalDuration == 0 ? 0 : _currentPosition / _totalDuration;
@@ -266,8 +268,6 @@ class NowPlayingModel extends ChangeNotifier {
       _totalDuration = item!.duration!.inSeconds.toDouble();
       notifyListeners();
     });
-
-
   }
 
   // ---------- ACTIONS ----------
@@ -327,7 +327,6 @@ class NowPlayingModel extends ChangeNotifier {
     await audioHandler.toggleRepeat();
     notifyListeners();
   }
-
 
   MediaItem _toMediaItem(Song song) {
     return MediaItem(

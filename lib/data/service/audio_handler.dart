@@ -6,7 +6,7 @@ import 'package:just_audio/just_audio.dart';
 
 import '../save_helpers.dart';
 
-enum RepeatMode {
+enum MyRepeatMode {
   off,
   one,
   all,
@@ -21,10 +21,10 @@ class MusicAudioHandler extends BaseAudioHandler
 
   Stream<Duration> get positionStream => _player.positionStream;
 
-  RepeatMode _repeatMode = RepeatMode.off;
+  MyRepeatMode _repeatMode = MyRepeatMode.off;
   bool _shuffleEnabled = false;
 
-  RepeatMode get repeatMode => _repeatMode;
+  MyRepeatMode get repeatMode => _repeatMode;
   bool get shuffleEnabled => _shuffleEnabled;
 
   // bool _completionHandled = false;
@@ -170,16 +170,16 @@ class MusicAudioHandler extends BaseAudioHandler
 
   Future<void> toggleRepeat() async {
     switch (_repeatMode) {
-      case RepeatMode.off:
-        _repeatMode = RepeatMode.all;
+      case MyRepeatMode.off:
+        _repeatMode = MyRepeatMode.all;
         await _player.setLoopMode(LoopMode.all);
         break;
-      case RepeatMode.all:
-        _repeatMode = RepeatMode.one;
+      case MyRepeatMode.all:
+        _repeatMode = MyRepeatMode.one;
         await _player.setLoopMode(LoopMode.one);
         break;
-      case RepeatMode.one:
-        _repeatMode = RepeatMode.off;
+      case MyRepeatMode.one:
+        _repeatMode = MyRepeatMode.off;
         await _player.setLoopMode(LoopMode.off);
         break;
     }
@@ -187,9 +187,9 @@ class MusicAudioHandler extends BaseAudioHandler
     playbackState.add(
       playbackState.value.copyWith(
         repeatMode: {
-          RepeatMode.off: AudioServiceRepeatMode.none,
-          RepeatMode.all: AudioServiceRepeatMode.all,
-          RepeatMode.one: AudioServiceRepeatMode.one,
+          MyRepeatMode.off: AudioServiceRepeatMode.none,
+          MyRepeatMode.all: AudioServiceRepeatMode.all,
+          MyRepeatMode.one: AudioServiceRepeatMode.one,
         }[_repeatMode]!,
       ),
     );
